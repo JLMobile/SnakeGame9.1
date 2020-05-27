@@ -1,1 +1,2 @@
-# SnakeGame9.1
+# SnakeGame7.1
+Pass Task 7.1
