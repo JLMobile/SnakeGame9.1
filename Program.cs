@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,45 +31,8 @@ namespace Snake
         private static int MainMenu()
         {
             //main menu options
-           
+
             Console.Clear();
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "                                  88                 ");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "                                  88");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "                                  88");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + ",adPPYba,  8b,dPPYba,  ,adPPYYba, 88   ,d8  ,adPPYba,  ");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "I8[    ''  88P'   `'8a ''     `Y8 88 ,a8'  a8P_____88  ");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + " `'Y8ba,   88       88 ,adPPPPP88 8888[    8PP'''''''  ");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "aa    ]8I  88       88 88,    ,88 88`'Yba, '8b,   ,aa  ");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "`'YbbdP''  88       88 `'8bbdP'Y8 88   `Y8a `'Ybbd8''  ");
-
-
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "                 ____");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "           _,.-'`_ o `;__,    ");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "            _.-'`'---'   '");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "                    ____");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "                 .'`_ o `;__,");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "      .       .'.'` '---'   '         ");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "      .`-...-'.'");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "       `-...-'");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "                        _,.--.");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "   --..,_            .'`__ o  `;__,");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "       `'.'.       .'.'`  '---'`  '     ");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "          '.`-...-'.'");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "            `-...-'");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "    --..,_                     _,.--.");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "       `'.'.                .'`__ o  `;__.   ");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "          '.'.            .'.'`  '---'`  `");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "            '.`'--....--'`.'");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "              `'--....--'`");
-            Console.WriteLine( "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "");
-
-
-            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "Please Press Enter To Continue...");
-            Console.ReadLine();
-            Console.Clear();
-
-
             Console.WriteLine("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "Choose an option:");
             Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "1) Start Game");
             Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "2) High Scores");
@@ -84,6 +47,7 @@ namespace Snake
                     Console.Clear();
                     Console.WriteLine("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "1)Normal Mode");
                     Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "2)Hard Mode");
+                    Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "3)Extreme Mode");
                     Console.Write("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "Select an option: ");
                     switch (Console.ReadLine())
                     {
@@ -91,6 +55,8 @@ namespace Snake
                             return 1;
                         case "2":
                             return 2;
+                        case "3":
+                            return 3;
                         default:
                             return 1;
                     }
@@ -271,26 +237,9 @@ namespace Snake
             playerLose.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + @"\Lose.wav";
             playerLose.Play(); //Play the die sound effect after player died
         }
-
-
-
-
-
-        //Main Program
-        static void Main(string[] args)
+        public void Program()    
         {
-           
-            Console.WindowHeight = 30;
-            Console.WindowWidth = 130;
-
-            // Set the Foreground color to blue 
-            Console.BackgroundColor
-                = ConsoleColor.White;
-
-            // Display current Foreground color 
-            Console.ForegroundColor = ConsoleColor.Black;
-            //prevents from cursor showing
-            Console.CursorVisible = false;
+            
             byte right = 0;
             byte left = 1;
             byte down = 2;
@@ -304,7 +253,7 @@ namespace Snake
             Random rand = new Random();
             int showMenu = 0;
 
-            Console.Beep(1188, 250); Console.Beep(1056, 250); Console.Beep(990, 500); Console.Beep(990, 250); Console.Beep(1056, 250); Console.Beep(1188, 500); Console.Beep(1320, 500); Console.Beep(1056, 500); Console.Beep(880, 500); Console.Beep(880, 500);
+            
 
             while (showMenu == 0)
             {
@@ -320,6 +269,12 @@ namespace Snake
                     foodDissapearTime = 7500;
                     sleepTime = 50;
                 }
+
+                if (showMenu == 3)
+                {   //Extreme Mode 
+                    foodDissapearTime = 3750;
+                    sleepTime = 25;
+                }
                 Snake s = new Snake();
 
                 // Define direction with characteristic of index of array
@@ -334,6 +289,21 @@ namespace Snake
                 if (showMenu == 2)
                 {
                     s.Obstacles(obstacles);
+                    obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
+                    obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
+                    obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
+                    obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
+                    obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
+                }
+
+                if (showMenu == 3)
+                {
+                    s.Obstacles(obstacles);
+                    obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
+                    obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
+                    obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
+                    obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
+                    obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
                     obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
                     obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
                     obstacles.Add(new Position(rand.Next(1, Console.WindowHeight), rand.Next(0, Console.WindowWidth)));
@@ -410,9 +380,9 @@ namespace Snake
                     if (direction == up) Console.Write("^");//Snakes head when moving up
                     if (direction == down) Console.Write("v");//Snakes head when moving down
                     // food will be positioned in different column and row from snakes head and will not touch the score shown on console
-                    if ((snakeNewHead.col == food.col +1 && snakeNewHead.row == food.row) || (snakeNewHead.col == food.col +1 && snakeNewHead.row == food.row))
+                    if ((snakeNewHead.col == food.col + 1 && snakeNewHead.row == food.row) || (snakeNewHead.col == food.col + 1 && snakeNewHead.row == food.row))
                     {
-                        if (snakeNewHead.col == food.col +1 && snakeNewHead.row == food.row)
+                        if (snakeNewHead.col == food.col + 1 && snakeNewHead.row == food.row)
                             score += (snakeElements.Count);
                         Scoreboard.Show("Current Score", 0, 1);
                         Scoreboard.WriteScore(score, 0, 2);
@@ -442,8 +412,8 @@ namespace Snake
                             obstacles.Contains(obstacle) ||
                             (food.row != obstacle.row && food.col != obstacle.row));
                         obstacles.Add(obstacle);
-                       //new obstacles will not be placed on the score
-                        Console.SetCursorPosition(obstacle.col +1, obstacle.row);
+                        //new obstacles will not be placed on the score
+                        Console.SetCursorPosition(obstacle.col + 1, obstacle.row);
                         s.DrawObstacle();
                     }
                     else
@@ -476,6 +446,71 @@ namespace Snake
                     //pause the execution of snake moving speed
                     Thread.Sleep((int)sleepTime);
                 }
+            }
+        }
+
+
+
+
+
+        //Main Program
+        static void Main(string[] args)
+        {
+            Console.WindowHeight = 30;
+            Console.WindowWidth = 130;
+
+            // Set the Foreground color to blue 
+            Console.BackgroundColor
+                = ConsoleColor.White;
+
+            // Display current Foreground color 
+            Console.ForegroundColor = ConsoleColor.Black;
+            //prevents from cursor showing
+            Console.CursorVisible = false;
+
+            int counter = 0;
+            Snake s = new Snake();
+       
+            Console.Beep(1188, 250); Console.Beep(1056, 250); Console.Beep(990, 500); Console.Beep(990, 250); Console.Beep(1056, 250); Console.Beep(1188, 500); Console.Beep(1320, 500); Console.Beep(1056, 500); Console.Beep(880, 500); Console.Beep(880, 500);
+            Console.Clear();
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "                                  88                 ");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "                                  88");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "                                  88");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + ",adPPYba,  8b,dPPYba,  ,adPPYYba, 88   ,d8  ,adPPYba,  ");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "I8[    ''  88P'   `'8a ''     `Y8 88 ,a8'  a8P_____88  ");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + " `'Y8ba,   88       88 ,adPPPPP88 8888[    8PP'''''''  ");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "aa    ]8I  88       88 88,    ,88 88`'Yba, '8b,   ,aa  ");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "`'YbbdP''  88       88 `'8bbdP'Y8 88   `Y8a `'Ybbd8''  ");
+
+
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "                 ____");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "           _,.-'`_ o `;__,    ");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "            _.-'`'---'   '");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "                    ____");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "                 .'`_ o `;__,");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "      .       .'.'` '---'   '         ");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "      .`-...-'.'");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "       `-...-'");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "                        _,.--.");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "   --..,_            .'`__ o  `;__,");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "       `'.'.       .'.'`  '---'`  '     ");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "          '.`-...-'.'");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "            `-...-'");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "    --..,_                     _,.--.");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "       `'.'.                .'`__ o  `;__.   ");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "          '.'.            .'.'`  '---'`  `");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "            '.`'--....--'`.'");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "              `'--....--'`");
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "");
+
+
+            Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "Please Press Enter To Continue...");
+            Console.ReadLine();
+            Console.Clear();
+            while (counter == 0)
+            {
+                s.Program();
             }
         }
 
