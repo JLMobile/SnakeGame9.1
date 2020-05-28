@@ -16,7 +16,7 @@ namespace Snake
     //Define a struct for the position of the snake and other objects.
     struct Position
     {
-        public int row
+        public int row;
         public int col;
         public Position(int row, int col)
         {
