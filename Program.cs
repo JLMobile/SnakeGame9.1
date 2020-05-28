@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -263,7 +263,7 @@ namespace Snake
             { // Normal Mode
                 foodDissapearTime = 15000;
                 sleepTime = 100;
-
+            }
                 if (showMenu == 2)
                 { // Hard Mode
                     foodDissapearTime = 7500;
@@ -446,7 +446,7 @@ namespace Snake
                     //pause the execution of snake moving speed
                     Thread.Sleep((int)sleepTime);
                 }
-            }
+            
         }
 
 
